@@ -8,7 +8,7 @@ function a2hex(str) {
   var arr = [];
   for (var i = 0, l = str.length; i < l; i ++) {
     var hex = Number(str.charCodeAt(i)).toString(16);
-    arr.push(hex);
+    arr.push(hex.toString().toUpperCase());
   }
   return arr.join('');
 }
@@ -32,7 +32,7 @@ export function activate(context: vscode.ExtensionContext) {
     // The command has been defined in the package.json file
     // Now provide the implementation of the command with  registerCommand
     // The commandId parameter must match the command field in package.json
-    let disposable = vscode.commands.registerCommand('extension.sayHello', () => {
+    let disposable = vscode.commands.registerCommand('extension.hex2ascii', () => {
         // The code you place here will be executed every time your command is executed
         // Display a message box to the user
         var editor = vscode.window.activeTextEditor;
@@ -45,11 +45,24 @@ export function activate(context: vscode.ExtensionContext) {
 
         editor.edit(function (builder) {
             builder.replace(selection, hex2a(text));
-        })
+        });
 
     });
-
     context.subscriptions.push(disposable);
+    let dispAscii2Hex=vscode.commands.registerCommand('extension.ascii2hex',()=>{
+        var editor = vscode.window.activeTextEditor;
+        if (!editor) {
+            console.log("there is no active editor opened");
+            return;
+        }
+        var selection = editor.selection;
+        var text = editor.document.getText(selection);
+
+        editor.edit(function (builder) {
+            builder.replace(selection, a2hex(text));
+        });
+    });
+    context.subscriptions.push(dispAscii2Hex);
 }
 
 // this method is called when your extension is deactivated

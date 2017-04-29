@@ -11,14 +11,18 @@
         "Other"
     ],
     "activationEvents": [
-        "onCommand:extension.sayHello"
+        "onCommand:extension.hex2ascii","onCommand:extension.ascii2hex"
     ],
     "main": "./out/src/extension",
     "contributes": {
         "commands": [{
-            "command": "extension.sayHello",
-            "title": "hex2ascii"
-        }]
+            "command": "extension.hex2ascii",
+            "title": "Convert: Hex To Ascii, h2a"
+        },{
+            "command": "extension.ascii2hex",
+            "title": "Convert: Ascii To Hex, a2h"
+        }
+        ]
     },
     "scripts": {
         "vscode:prepublish": "tsc -p ./",
