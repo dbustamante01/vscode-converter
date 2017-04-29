@@ -3,7 +3,7 @@
     "displayName": "Converter",
     "description": "Conversion helper for Hex to Ascii and Ascii to Hex",
     "version": "0.0.1",
-    "publisher": "cahitbeyaz",
+    "publisher": "beyazc",
     "engines": {
         "vscode": "^1.11.0"
     },
