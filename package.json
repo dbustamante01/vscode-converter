@@ -2,8 +2,13 @@
     "name": "converter",
     "displayName": "Converter",
     "description": "Conversion helper for Hex to Ascii and Ascii to Hex",
-    "version": "0.0.1",
+    "version": "0.0.3",
     "publisher": "beyazc",
+    "icon": "icon.png",
+    "repository": {
+        "type": "github",
+        "url": "https://github.com/beyazc/vscode-converter"
+    },
     "engines": {
         "vscode": "^1.11.0"
     },
@@ -11,17 +16,20 @@
         "Other"
     ],
     "activationEvents": [
-        "onCommand:extension.hex2ascii","onCommand:extension.ascii2hex"
+        "onCommand:extension.hex2ascii",
+        "onCommand:extension.ascii2hex"
     ],
     "main": "./out/src/extension",
     "contributes": {
-        "commands": [{
-            "command": "extension.hex2ascii",
-            "title": "Convert: Hex To Ascii, h2a"
-        },{
-            "command": "extension.ascii2hex",
-            "title": "Convert: Ascii To Hex, a2h"
-        }
+        "commands": [
+            {
+                "command": "extension.hex2ascii",
+                "title": "Convert: Hex To Ascii, h2a"
+            },
+            {
+                "command": "extension.ascii2hex",
+                "title": "Convert: Ascii To Hex, a2h"
+            }
         ]
     },
     "scripts": {
