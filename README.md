@@ -1,6 +1,6 @@
 Converts selected text (hexadecimal string or ASCII string) to ASCII or hexadecimal string according your choice.
 
- ![VSCODE](https://raw.githubusercontent.com/beyazc/vscode-converter/master/converter_demo.gif)
+ ![VSCODE](https://raw.githubusercontent.com/dbustamante01/vscode-converter/master/converter_demo.gif)
 
 
 how to:
